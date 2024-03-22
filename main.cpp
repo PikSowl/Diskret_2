@@ -51,6 +51,23 @@ void task2(){
     cout << "a(100)" << an1 << endl; 
 }
 
+int basicClimb(int up, int right){
+    if (up > 0 && right > 0) return basicClimb(up - 1, right) + basicClimb(up, right - 1);
+    return 1;
+}
+
+int conditionalClimb(int up, int right){
+    if (right == 0 && up != 0) return 0;
+    if (up > 0 && right > 0) return conditionalClimb(up - 1, right - 1) + conditionalClimb(up, right - 1);
+    return 1;
+}
+
+void task6(){
+    cout << basicClimb(13,16) << endl;
+    cout << conditionalClimb(13,16) << endl;
+    cout << basicClimb(13,16 - 13) << endl;
+}
+
 int main(){
     int i;
     cout << "Task number: ";
@@ -63,6 +80,10 @@ int main(){
         }
         case 2:{
             task2();
+            break;
+        }
+        case 6:{
+            task6();
             break;
         }
         default:{
