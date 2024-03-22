@@ -29,9 +29,9 @@ int main() {
                     answer++;
 
 
-    for (auto [key, value]: letters){
+    for (auto [key, value]: letters)
         cout << key << " : " << value << endl;
-    }
+
 
     cout << endl << "answer: " << answer << endl;
 
