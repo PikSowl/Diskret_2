@@ -8,7 +8,7 @@ using std::endl;
 using std::string;
 using std::map;
 
-int main() {
+void task1() {
     string word = "KOMBINATORIKA";
     int answer = 0;
 
@@ -34,6 +34,41 @@ int main() {
 
 
     cout << endl << "answer: " << answer << endl;
+}
 
+double Recurent(double an1, double an){
+    return 4*an1 - 13*an;
+}
+
+void task2(){
+    double an = 1;
+    double an1 = 2;
+    for (int i = 2; i <= 100; i++){
+        double temp = Recurent(an1, an);
+        an = an1;
+        an1 = temp;
+    }
+    cout << "a(100)" << an1 << endl; 
+}
+
+int main(){
+    int i;
+    cout << "Task number: ";
+    cin >> i;
+    cout << endl;
+    switch (i) {
+        case 1 :{
+            task1();
+            break;
+        }
+        case 2:{
+            task2();
+            break;
+        }
+        default:{
+            cout << "wrong number" << endl;
+            break;
+        }
+    }
     return 0;
 }
